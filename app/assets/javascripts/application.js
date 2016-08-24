@@ -24,10 +24,4 @@ document.addEventListener("turbolinks:load", function() {
     $(this).remove();
   });
 
-  // people filter
-  var options = {
-    valueNames: [ 'name' ]
-  };
-  var userList = new List('people', options);
-
 })

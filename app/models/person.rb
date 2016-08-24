@@ -7,4 +7,8 @@ class Person < ApplicationRecord
   def first_name
     name.split(' ')[0]
   end
+
+  def self.search(query)
+    where('name like ?', "%#{query}%")
+  end
 end

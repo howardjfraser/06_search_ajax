@@ -1,27 +1,28 @@
 require 'test_helper'
 require 'capybara/poltergeist'
 
-class PeopleFilterTest < ActionDispatch::IntegrationTest
+class PeopleSearchTest < ActionDispatch::IntegrationTest
+  # TODO: does this need to be :poltergeist?
   def setup
     Capybara.current_driver = :poltergeist
   end
 
-  test 'filter people' do
+  test 'search people' do
     visit '/people'
     assert page.has_content? 'David'
     assert page.has_content? 'Michael'
-    filter 'zz'
+    search_for 'zz'
     assert page.has_no_content? 'David'
     assert page.has_no_content? 'Michael'
-    filter 'av'
+    search_for 'av'
     assert page.has_content? 'David'
     assert page.has_no_content? 'Michael'
   end
 
   private
 
-  def filter(string)
-    fill_in('filter', with: string)
-    find('#filter').native.send_key(:Enter)
+  def search_for(string)
+    fill_in('search', with: string)
+    find('#search').native.send_key(:Enter)
   end
 end
