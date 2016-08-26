@@ -55,7 +55,8 @@ class PersonTest < ActiveSupport::TestCase
   test 'search multiple results' do
     results = Person.search('avi')
     assert results.count == 2
-    assert results.first == @person
+    assert results.first == people(:avi)
+    assert results.second == @person
   end
 
   test 'search no results' do
