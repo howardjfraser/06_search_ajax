@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def index
-    return @people = Person.search(params[:search]) if params[:search]
-    @people = Person.sorted
+    term = params[:search]
+    @people = term ? Person.search(term) : Person.sorted
   end
 
   def show
