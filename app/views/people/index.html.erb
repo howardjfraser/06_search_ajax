@@ -1,7 +1,7 @@
 <% provide :button, link_to("Add New", new_person_path, class: 'btn btn-success pull-xs-right') %>
 <% provide :title, 'People' %>
 
-<%= form_tag people_path, method: 'get' do %>
+<%= form_tag people_path, method: 'get', remote: true, authenticity_token: true do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search by name&hellip;".html_safe,
     autofocus: 'true', autocomplete: 'off' %>
 <% end %>

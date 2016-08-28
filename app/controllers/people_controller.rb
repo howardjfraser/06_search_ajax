@@ -2,6 +2,10 @@ class PeopleController < ApplicationController
   def index
     term = params[:search]
     @people = term ? Person.search(term) : Person.sorted
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
