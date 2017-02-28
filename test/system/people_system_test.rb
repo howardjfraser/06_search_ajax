@@ -1,6 +1,6 @@
-require 'test_helper'
+require "application_system_test_case"
 
-class PeopleIntegrationTest < ActionDispatch::IntegrationTest
+class PeopleSystemTest < ApplicationSystemTestCase
   test 'add person' do
     new_name = sample_string
     new_job_title = sample_string

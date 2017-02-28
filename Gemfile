@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.0.beta1'
 
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -14,6 +14,10 @@ gem 'ffaker'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platform: :mri
+
+  gem 'capybara', '~> 2.7.0'
+  gem 'selenium-webdriver'
+
 end
 
 group :development do
@@ -24,8 +28,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'poltergeist'
   gem 'minitest-reporters'
   gem 'simplecov'
 end

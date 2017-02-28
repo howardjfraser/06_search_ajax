@@ -1,11 +1,6 @@
-require 'test_helper'
-require 'capybara/poltergeist'
+require "application_system_test_case"
 
-class PeopleSearchTest < ActionDispatch::IntegrationTest
-  # TODO: does this need to be :poltergeist?
-  def setup
-    Capybara.current_driver = :poltergeist
-  end
+class PeopleSearchTest < ApplicationSystemTestCase
 
   test 'search people' do
     visit '/people'
@@ -23,6 +18,6 @@ class PeopleSearchTest < ActionDispatch::IntegrationTest
 
   def search_for(string)
     fill_in('search', with: string)
-    find('#search').native.send_key(:Enter)
+    find('#search').send_keys:return
   end
 end
