@@ -15,8 +15,8 @@ class PeopleSearchTest < ApplicationSystemTestCase
 
   private
 
-  def search_for(string)
-    fill_in('search', with: string)
+  def search_for(term)
+    fill_in('search', with: term)
     find('#search').send_keys:return
   end
 end
