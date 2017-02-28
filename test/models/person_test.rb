@@ -61,6 +61,6 @@ class PersonTest < ActiveSupport::TestCase
 
   test 'search no results' do
     results = Person.search('zz')
-    assert results.count == 0
+    assert results.count.zero?
   end
 end

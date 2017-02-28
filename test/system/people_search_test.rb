@@ -1,7 +1,6 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class PeopleSearchTest < ApplicationSystemTestCase
-
   test 'search people' do
     visit '/people'
     assert page.has_content? 'David'

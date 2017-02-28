@@ -10,8 +10,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @person = Person.new
@@ -26,8 +25,7 @@ class PeopleController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @person.update person_params

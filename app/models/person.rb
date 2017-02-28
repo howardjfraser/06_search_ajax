@@ -3,7 +3,7 @@ class Person < ApplicationRecord
   validates :bio, presence: true, length: { maximum: 512 }
 
   scope :sorted, -> { order('lower(name)') }
-  scope :search, -> (term) { sorted.where('name like ?', "%#{term}%") }
+  scope :search, ->(term) { sorted.where('name like ?', "%#{term}%") }
 
   def first_name
     name.split(' ')[0]

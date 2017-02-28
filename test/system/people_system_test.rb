@@ -1,4 +1,4 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class PeopleSystemTest < ApplicationSystemTestCase
   test 'add person' do
